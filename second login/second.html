@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kollam District Blood Bank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #fdfdfd;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      height: 100vh;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #9D1E20;
+      font-weight: 800;
+    }
+
+    .profile-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .profile-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Main Section */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+    }
+
+    /* Left Section Styling */
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .left-section .button {
+      width: 80%;
+      margin: 10px 0;
+      padding: 15px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: #e30613;
+      background-color: #fef6f6;
+      border: 1px solid #e30613;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-decoration: none; /* Remove underline */
+    }
+
+    .left-section .button:hover {
+      background-color: #e30613;
+      color: #fff;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .left-section .button a {
+      color: inherit; /* Inherit color from parent */
+      text-decoration: none; /* Remove underline */
+    }
+
+    /* Right Section Styling */
+    .right-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+    }
+
+    .right-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .right-section {
+        display: none;
+      }
+
+      .left-section .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <h1>KOLLAM DISTRICT BLOOD BANK</h1>
+      <div class="profile-icon">
+        <img src="your_profile_icon_url_here" alt="Profile Icon">
+      </div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="main">
+      <!-- Left Section -->
+      <div class="left-section">
+        <a class="button" href="C:\Desktop\miniproject\donor window\donorlogin.html">Donor Window</a>
+        <a class="button" href="C:\Desktop\miniproject\nurse login\donorlogin.html">Nurse’s Dashboard</a>
+        <div class="button" href="doctor login\d">Doctor’s Dashboard</div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="right-section">
+        <img src="blood.png" alt="Red Blood Cells">
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Navigation -->
+
+</body>
+</html>

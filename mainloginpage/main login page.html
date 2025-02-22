@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centralized Blood Banking Software</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* General Body Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    /* Left Section Styling */
+    .left-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #fdfdfd; /* Matching background */
+     
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1); /* Shadow on the right edge */
+      position: relative;
+    }
+
+    .left-section img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .footer-text {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      text-align: left;
+      color: #9D1E20;
+    }
+
+    .footer-text h1 {
+      font-size: 40px;
+      margin: 0;
+      font-weight: 800;
+      word-wrap: break-word;
+    }
+
+    .footer-text p {
+      font-size: 25px;
+      margin: 5px 0 0;
+      font-weight: 600;
+      word-wrap: break-word;
+    }
+
+    /* Right Section Styling */
+    .right-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      background-color: #fdfdfd;
+    }
+
+    .logo {
+      position: absolute;
+      top: 160px;
+      left: 65%;
+      transform: translateX(-50%);
+    }
+
+    .logo img {
+      width: 80px;
+      height: auto;
+    }
+
+    .login-header {
+      text-align: center;
+      
+    }
+
+    .login-header h2 {
+      font-size: 36px;
+      color: #525252;
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+
+    .login-header p {
+      font-size: 16px;
+      color: #525252;
+      font-weight: 400;
+      word-wrap: break-word;
+    }
+
+    /* Login Form Styling */
+    .form {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .form-group {
+      margin-bottom: 15px
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #828282;
+      font-weight: 600;
+      word-wrap: break-word;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group input:focus {
+      border-color: #e30613;
+      outline: none;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .actions a {
+      font-size: 12px;
+      color: #9D1E20;
+      font-weight: 600;
+      text-decoration: none;
+      word-wrap: break-word;
+    }
+
+    .login-btn {
+      width: 100%;
+      background-color: #e30613;
+      color: #fff;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background-color: #c40510;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 10px;
+      color: #E0E0E0;
+      font-weight: 400;
+      word-wrap: break-word;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .remember-me {
+      color: #A1A1A1;
+      font-size: 12px;
+      font-weight: 400;
+      word-wrap: break-word;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <img src="pngwing.com 1.png" />
+      <div class="footer-text">
+        <h1>CENTRALIZED BLOOD BANKING SOFTWARE</h1>
+        <p>A COMPLETE WEBSITE FOR CONTROLLING BLOOD BANK</p>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="Group 1686550876 (1).png">
+      </div>
+
+      <!-- Login Header -->
+      <div class="login-header">
+        <h2>Login to your Account</h2>
+        <p>Login using ID given by authority</p>
+      </div>
+
+      <!-- Login Form -->
+      <form class="form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="mail@abc.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="********" required>
+        </div>
+        <div class="actions">
+          <label>
+            <input type="checkbox"> Remember Me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <a href="C:\Desktop\miniproject\second login\second.html" class="login-btn">Login</a>
+
+
+      </form>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>© 2025 Centralized Blood Banking Software</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
