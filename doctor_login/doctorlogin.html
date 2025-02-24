@@ -1,165 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kollam District Blood Bank</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Nunito Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-        .header {
-            background-color: #fff;
-            padding: 20px;
-            text-align: left; /* Align text to the left */
-            border-bottom: 1px solid #ddd;
-            position: relative;
-        }
-        .header h1 {
-            margin: 0;
-            color: #9D1E20;
-            font-size: 40px;
-            font-family: 'Nunito Sans', sans-serif;
-            font-weight: 800;
-            word-wrap: break-word;
-        }
-        .user-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 2px solid #9D1E20;
-        }
-        .user-icon img {
-            width: 100%;
-            height: auto;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-        .background-image {
-            flex: 1;
-            background-image: url('background-image.jpg'); /* Replace with actual image URL */
-            background-size: cover;
-            background-position: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start; /* Align items to the left */
-            position: relative;
-        }
-        .bg {
-            max-width: 70%; /* Reduce the size of the image */
-            height: auto;
-            margin-left: 0; /* Remove margin to align to the left */
-        }
-        .form-container {
-            flex: 1;
-            max-width: 400px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-container h2 {
-            color: #9D1E20;
-            font-size: 36px;
-            font-family: 'Nunito Sans', sans-serif;
-            font-weight: 800;
-            word-wrap: break-word;
-            margin-bottom: 20px;
-        }
-        .form-container label {
-            color: #1E1E1E;
-            font-size: 16px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            line-height: 22.40px;
-            word-wrap: break-word;
-        }
-        .form-container input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            color: #B3B3B3;
-            font-size: 16px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            line-height: 16px;
-            word-wrap: break-word;
-        }
-        .form-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #b22222;
-            color: #F5F5F5;
-            font-size: 16px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            line-height: 16px;
-            word-wrap: break-word;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #a21d1d;
-        }
-        .form-container a {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: #1B006A;
-            font-size: 16px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            text-decoration: underline;
-            line-height: 22.40px;
-            word-wrap: break-word;
-        }
-        .form-container a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kollam District Blood Bank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #fdfdfd;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+      padding: 20px;
+      position: relative;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 40px;
+      color: #9D1E20;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      word-wrap: break-word;
+    }
+
+    .rectangle {
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+      box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.25);
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Main Section */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+    }
+
+    /* Left Section Styling */
+    .left-section {
+      background-color: #fff;
+    }
+
+    .left-section img {
+      width: 100%;
+      height: 90%;
+    }
+
+    /* Right Section Styling */
+    .right-section {
+      background-color: #fff;
+    }
+
+    .logout {
+      color: #ffffff;
+      background-color: #9D1E20;
+      color: #ffffff;
+      border: 1px solid;
+      border-radius: 60px;
+      height: 50px;
+      width: 100px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .right-section {
+        display: none;
+      }
+    }
+
+    .right-side {
+      margin-left: 200px; /* Adjusted to move right by 100px */
+      
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .right-side h2 {
+      color: #9D1E20;
+      font-size: 36px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      word-wrap: break-word;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      color: #1E1E1E;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 22.40px;
+      word-wrap: break-word;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 96%;
+      padding: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 16px;
+      color: #B3B3B3;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 16px;
+      color: #F5F5F5;
+      background-color: #9D1E20;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 05px;
+    margin-left: 5px;
+      margin-bottom: 10px;
+      ;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 22.40px;
+    }
+
+    .register-link a {
+      color: #1B006A;
+      text-decoration: underline;
+      font-weight: 400;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Header Section -->
     <div class="header">
-        <h1>Kollam District Blood Bank</h1>
-        <div class="user-icon">
-            <img src="user_icon.png" alt="User Icon"> <!-- Replace with actual image URL -->
-        </div>
+      <h1>KOLLAM DISTRICT BLOOD BANK</h1>
+      <div class="profile-icon">
+        <a style="color: #3f3f3f;">+91 8229767503 , +91 8742789</a>
+      </div>
+      <div class="rectangle"></div>
     </div>
-    <div class="container">
-        <div class="background-image">
-            <img src="pngegg 1.png" alt="bg" class="bg">
-        </div>
+
+    <!-- Main Section -->
+    <div class="main">
+      <!-- Left Section -->
+      <div class="left-section">
+        <img src="pngegg 1.png">
+      </div>
+
+      <!-- Right Section -->
+      <div class="right-side">
+        <h2>Login As Doctor</h2>
         <div class="form-container">
-            <h2>Login / Register As Doctor</h2>
-            <form>
-                <label for="mobile">MOBILE NUMBER</label>
-                <input type="text" id="mobile" placeholder="Value" required>
-                <button type="button">Send OTP</button>
-                <label for="otp">ENTER OTP</label>
-                <input type="text" id="otp" placeholder="Value" required>
-                <button type="submit">Sign In</button>
-            </form>
-            <a href="#">New User? Register now</a>
+          <div class="form-group">
+            <label for="mobile">MOBILE NUMBER</label>
+            <input type="text" id="mobile" placeholder="enter mobile number">
+          </div>
+         <div class="form-group">
+            <label for="otp">PASSWORD</label>
+            <input type="password" id="otp" placeholder="enter password">
+          </div>
+          <button class="btn">Sign In</button>
+          
         </div>
+      </div>
     </div>
+  </div>
 </body>
 </html>
