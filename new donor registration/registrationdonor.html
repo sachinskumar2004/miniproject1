@@ -33,7 +33,7 @@
 
     .header h1 {
       margin: 0;
-      font-size: 40px;
+      font-size: 30px;
       color: #9D1E20;
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 800;
@@ -50,7 +50,9 @@
       z-index: -1;
     }
 
-  
+    .profile-icon {
+      color: #3f3f3f;
+    }
 
     /* Form Styling */
     .form-container {
@@ -193,8 +195,8 @@
             <input type="text" placeholder="Enter your name" required>
           </div>
           <div>
-            <label>Age</label>
-            <input type="text" placeholder="Enter your age" required>
+            <label>Date of Birth</label>
+            <input type="date" placeholder="Enter your date of birth" required>
           </div>
           <div>
             <label>Gender</label>
@@ -203,6 +205,20 @@
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label>Blood Group</label>
+            <select required>
+              <option value="" disabled selected>Select your blood group</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
             </select>
           </div>
         </div>

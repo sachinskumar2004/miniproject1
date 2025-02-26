@@ -13,6 +13,8 @@
       padding: 0;
       font-family: 'Nunito Sans', sans-serif;
       background-color: #fdfdfd;
+      height: 100%;
+      overflow: hidden;
     }
 
     .container {
@@ -33,7 +35,7 @@
 
     .header h1 {
       margin: 0;
-      font-size: 40px;
+      font-size: 30px;
       color: #9D1E20;
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 800;
@@ -95,7 +97,7 @@
 
     .right-side {
       margin-left: 200px; /* Adjusted to move right by 100px */
-      
+      margin-top: 50px; /* Adjusted to move down by 50px */
       flex: 1;
       padding: 50px;
       display: flex;
@@ -212,18 +214,21 @@
 
       <!-- Right Section -->
       <div class="right-side">
-        <h2>Login As Doctor</h2>
+        <h2>Login / Register As Doctor</h2>
         <div class="form-container">
           <div class="form-group">
             <label for="mobile">MOBILE NUMBER</label>
-            <input type="text" id="mobile" placeholder="enter mobile number">
+            <input type="text" id="mobile" placeholder="Value">
           </div>
-         <div class="form-group">
-            <label for="otp">PASSWORD</label>
-            <input type="password" id="otp" placeholder="enter password">
+          <button class="btn">Send OTP</button>
+          <div class="form-group">
+            <label for="otp">ENTER OTP</label>
+            <input type="text" id="otp" placeholder="Value">
           </div>
           <button class="btn">Sign In</button>
-          
+          <div class="register-link">
+            New User? <a href="C:\Desktop\miniproject\new donor registration\registrationdonor.html">Register now</a>
+          </div>
         </div>
       </div>
     </div>
