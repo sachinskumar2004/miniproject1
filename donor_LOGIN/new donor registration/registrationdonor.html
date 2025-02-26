@@ -172,10 +172,72 @@
         width: 100%;
       }
     }
+
+    /* Popup Styling */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    .popup-content h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .popup-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .popup-content .btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 16px;
+      color: #F5F5F5;
+      background-color: #9D1E20;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .popup-content .btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .blur {
+      filter: blur(5px);
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="mainContainer">
     <!-- Header Section -->
     <div class="header">
       <h1>KOLLAM DISTRICT BLOOD BANK</h1>
@@ -188,7 +250,7 @@
     <!-- Form Section -->
     <div class="form-container">
       <h2>Register As Donor</h2>
-      <form>
+      <form id="donorForm">
         <div class="form-group">
           <div>
             <label>Name</label>
@@ -230,7 +292,7 @@
           </div>
           <div>
             <label>Phone Number</label>
-            <input type="text" placeholder="Enter your phone number" required>
+            <input type="text" id="phoneNumber" placeholder="Enter your phone number" required>
           </div>
         </div>
 
@@ -252,7 +314,7 @@
           </div>
           <div>
             <label>Aadhaar Number</label>
-            <input type="text" placeholder="Enter your Aadhaar number" required>
+            <input type="text" id="aadhaarNumber" placeholder="Enter your Aadhaar number" required>
           </div>
         </div>
 
@@ -268,9 +330,55 @@
           </div>
         </div>
 
-        <button class="btn">Submit</button>
+        <button type="button" class="btn" onclick="validateForm()">Submit</button>
       </form>
     </div>
   </div>
+
+  <!-- Popup Section -->
+  <div class="popup" id="otpPopup">
+    <div class="popup-content">
+      <h3>An OTP has been sent to the given mobile number</h3>
+      <input type="text" placeholder="Enter OTP" required>
+      <button class="btn">Verify</button>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      const form = document.getElementById('donorForm');
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      const aadhaarNumber = document.getElementById('aadhaarNumber').value;
+
+      if (form.checkValidity() && validatePhoneNumber(phoneNumber) && validateAadhaarNumber(aadhaarNumber)) {
+        showPopup();
+      } else {
+        form.reportValidity();
+      }
+    }
+
+    function validatePhoneNumber(phoneNumber) {
+      const phonePattern = /^\d{10}$/;
+      if (!phonePattern.test(phoneNumber)) {
+        alert('Please enter a valid 10-digit phone number.');
+        return false;
+      }
+      return true;
+    }
+
+    function validateAadhaarNumber(aadhaarNumber) {
+      const aadhaarPattern = /^\d{12}$/;
+      if (!aadhaarPattern.test(aadhaarNumber)) {
+        alert('Please enter a valid 12-digit Aadhaar number.');
+        return false;
+      }
+      return true;
+    }
+
+    function showPopup() {
+      document.getElementById('otpPopup').style.display = 'flex';
+      document.getElementById('mainContainer').classList.add('blur');
+    }
+  </script>
 </body>
 </html>
