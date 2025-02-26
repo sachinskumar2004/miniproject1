@@ -50,9 +50,7 @@
       z-index: -1;
     }
 
-    .profile-icon {
-      color: #3f3f3f;
-    }
+  
 
     /* Form Styling */
     .form-container {
@@ -163,26 +161,6 @@
       background-color: #b71c1c;
     }
 
-    .translate-btn {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      line-height: 16px;
-      color: #F5F5F5;
-      background-color: #1E90FF;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .translate-btn:hover {
-      background-color: #1C86EE;
-    }
-
     @media (max-width: 768px) {
       .form-group div {
         width: 100%;
@@ -193,23 +171,6 @@
       }
     }
   </style>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'ml',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-
-    function triggerGoogleTranslate() {
-      var translateElement = document.getElementById('google_translate_element');
-      var selectElement = translateElement.querySelector('select');
-      selectElement.value = 'ml';
-      selectElement.dispatchEvent(new Event('change'));
-    }
-  </script>
 </head>
 <body>
   <div class="container">
@@ -293,8 +254,6 @@
 
         <button class="btn">Submit</button>
       </form>
-      <button class="translate-btn" onclick="triggerGoogleTranslate()">Translate to Malayalam</button>
-      <div id="google_translate_element" style="display: none;"></div>
     </div>
   </div>
 </body>
