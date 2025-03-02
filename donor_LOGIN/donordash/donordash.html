@@ -153,6 +153,10 @@
         margin-bottom: 10px;
       }
     }
+
+    .for-women-only {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -184,7 +188,7 @@
         <div class="form-group">
           <div>
             <label>Gender</label>
-            <input type="text" value="Male" readonly>
+            <input type="text" value="female" readonly id="gender">
           </div>
           <div>
             <label>Blood Group</label>
@@ -384,6 +388,125 @@
             </select>
           </div>
         </div>
+        <div class="form-group">
+          <div>
+            <label>22. Have you had any vaccinations in the last 15 days?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>23. Have you had any kidney disease?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>24. Have you had a rabies vaccination in the past year?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>25. Have you ever been tested for HIV/AIDS?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>26. Have you had dental treatment in the past week?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>27. Have you ever used a needle or syringe to inject drugs or shared it with someone else?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>28. Have you had sex outside of marriage?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>29. Have you drunk alcohol today or yesterday?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>30. Did you sleep well yesterday?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>31. Are you interested in becoming a volunteer blood donor at a blood bank?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>32. Would you like to know the results of the blood test?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group for-women-only">
+          <div>
+            <label>1. Are you pregnant or experiencing bleeding?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>2. Have you had an abortion? If so, when?</label>
+            <input type="text" placeholder="Enter details">
+          </div>
+        </div>
+        <div class="form-group for-women-only">
+          <div>
+            <label>3. Do you have a child under one year of age?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="address">
+            <label>Donor's Declaration</label>
+            <textarea rows="5" readonly>
+I am a person who has completed 18 years of age. I agree to donate one unit of blood, to have my blood tested for blood-borne diseases such as HIV, Hepatitis B, Hepatitis C, Malaria, Syphilis, and to allow the blood bank to process my blood and blood components in a way that will benefit patients and use them for a larger patient population (in and outside this hospital). I understand that the above information is completely truthful and that all these questions are for my own safety and the safety of the patients who receive my blood.
+            </textarea>
+          </div>
+        </div>
         <button type="submit" class="btn">Submit</button>
       </form>
     </div>
@@ -398,6 +521,13 @@
       }
       reader.readAsDataURL(event.target.files[0]);
     }
-  </script>
-</body>
-</html>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const genderInput = document.getElementById('gender');
+      const forWomenOnlySections = document.querySelectorAll('.for-women-only');
+      if (genderInput.value.toLowerCase() === 'female') {
+        forWomenOnlySections.forEach(section => {
+          section.style.display = 'block';
+        });
+      }
+    });
