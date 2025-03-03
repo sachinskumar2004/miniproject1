@@ -68,7 +68,7 @@
     h2 {
       text-align: center;
       color: #9D1E20;
-      font-size: 36px;
+      font-size: 30px;
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 800;
       word-wrap: break-word;
@@ -112,7 +112,15 @@
     .address {
       width: 100%;
     }
+  
+  .declaration1 {
+    display: flex;
+    align-items: center;
+  }
 
+  .declaration input[type="checkbox"] {
+    margin-right: 5px;
+  }
     .btn {
       width: 100%;
       padding: 10px;
@@ -502,9 +510,14 @@
         <div class="form-group">
           <div class="address">
             <label>Donor's Declaration</label>
-            <textarea rows="5" readonly>
+            <textarea rows="8" readonly>
 I am a person who has completed 18 years of age. I agree to donate one unit of blood, to have my blood tested for blood-borne diseases such as HIV, Hepatitis B, Hepatitis C, Malaria, Syphilis, and to allow the blood bank to process my blood and blood components in a way that will benefit patients and use them for a larger patient population (in and outside this hospital). I understand that the above information is completely truthful and that all these questions are for my own safety and the safety of the patients who receive my blood.
             </textarea>
+            <div class="declaration1">
+              <input type="checkbox" id="declaration" name="declaration" required>
+              <label for="declaration">I agree to the above declaration</label>
+            </div>
+            
           </div>
         </div>
         <button type="submit" class="btn">Submit</button>
@@ -512,22 +525,4 @@ I am a person who has completed 18 years of age. I agree to donate one unit of b
     </div>
   </div>
 
-  <script>
-    function previewImage(event) {
-      const reader = new FileReader();
-      reader.onload = function() {
-        const output = document.getElementById('profileImage');
-        output.src = reader.result;
-      }
-      reader.readAsDataURL(event.target.files[0]);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const genderInput = document.getElementById('gender');
-      const forWomenOnlySections = document.querySelectorAll('.for-women-only');
-      if (genderInput.value.toLowerCase() === 'female') {
-        forWomenOnlySections.forEach(section => {
-          section.style.display = 'block';
-        });
-      }
-    });
+  
