@@ -116,6 +116,7 @@
   .declaration1 {
     display: flex;
     align-items: center;
+    
   }
 
   .declaration input[type="checkbox"] {
@@ -136,7 +137,19 @@
       font-weight: bold;
       margin-top: 10px;
     }
-
+    .declaration {
+                display: flex;
+                
+               
+                            }
+            
+    .declaration input[type="checkbox"] {
+                margin-left:200px; /* Adjust the margin as needed */
+              }
+    .declaration label {
+      white-space: nowrap; /* Prevent the label text from wrapping */
+    }
+              
     .btn:hover {
       background-color: #b71c1c;
     }
@@ -158,6 +171,7 @@
     @media (max-width: 768px) {
       .form-group div {
         width: 100%;
+
         margin-bottom: 10px;
       }
     }
@@ -513,14 +527,15 @@
             <textarea rows="8" readonly>
 I am a person who has completed 18 years of age. I agree to donate one unit of blood, to have my blood tested for blood-borne diseases such as HIV, Hepatitis B, Hepatitis C, Malaria, Syphilis, and to allow the blood bank to process my blood and blood components in a way that will benefit patients and use them for a larger patient population (in and outside this hospital). I understand that the above information is completely truthful and that all these questions are for my own safety and the safety of the patients who receive my blood.
             </textarea>
-            <div class="declaration1">
+            <div class="declaration">
               <input type="checkbox" id="declaration" name="declaration" required>
               <label for="declaration">I agree to the above declaration</label>
             </div>
             
+           
           </div>
         </div>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn">Submit To Nurse</button>
       </form>
     </div>
   </div>
