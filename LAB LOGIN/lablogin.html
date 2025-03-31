@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kollam District Blood Bank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #fdfdfd;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+      padding: 20px;
+      position: relative;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+      color: #9D1E20;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      word-wrap: break-word;
+    }
+
+    .rectangle {
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+      box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.25);
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Main Section */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+    }
+
+    /* Left Section Styling */
+    .left-section {
+      background-color: #fff;
+    }
+
+    .left-section img {
+      width: 100%;
+      height: 90%;
+    }
+
+    /* Right Section Styling */
+    .right-section {
+      background-color: #fff;
+    }
+
+    .logout {
+      color: #ffffff;
+      background-color: #9D1E20;
+      color: #ffffff;
+      border: 1px solid;
+      border-radius: 60px;
+      height: 50px;
+      width: 100px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .right-section {
+        display: none;
+      }
+    }
+
+    .right-side {
+      margin-left: 200px; /* Adjusted to move right by 100px */
+      margin-top: 50px; /* Adjusted to move down by 50px */
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .right-side h2 {
+      color: #9D1E20;
+      font-size: 36px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      word-wrap: break-word;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      color: #1E1E1E;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 22.40px;
+      word-wrap: break-word;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 96%;
+      padding: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 16px;
+      color: #B3B3B3;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 16px;
+      color: #F5F5F5;
+      background-color: #9D1E20;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 05px;
+    margin-left: 5px;
+      margin-bottom: 10px;
+      ;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 22.40px;
+    }
+
+    .register-link a {
+      color: #1B006A;
+      text-decoration: underline;
+      font-weight: 400;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <h1>KOLLAM DISTRICT BLOOD BANK</h1>
+      <div class="profile-icon">
+        <a style="color: #3f3f3f;">+91 8229767503 , +91 8742789</a>
+      </div>
+      <div class="rectangle"></div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="main">
+      <!-- Left Section -->
+      <div class="left-section">
+        <img src="pngegg 1.png">
+      </div>
+
+      <!-- Right Section -->
+      <div class="right-side">
+        <h2>Login  As Lab TEchnician</h2>
+        <div class="form-container">
+          <div class="form-group">
+            <label for="mobile">MOBILE NUMBER</label>
+            <input type="text" id="mobile" placeholder="Value">
+          </div>
+          <button class="btn">Send OTP</button>
+          <div class="form-group">
+            <label for="otp">ENTER OTP</label>
+            <input type="text" id="otp" placeholder="Value">
+          </div>
+          <button class="btn">Sign In</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

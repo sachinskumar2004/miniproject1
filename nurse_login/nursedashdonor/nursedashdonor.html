@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kollam District Blood Bank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #fdfdfd;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+      padding: 20px;
+      position: relative;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+      color: #9D1E20;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      word-wrap: break-word;
+    }
+
+    .rectangle {
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+      box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.25);
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+
+    .profile-icon {
+      color: #3f3f3f;
+    }
+
+    /* Form Styling */
+    .form-container {
+      width: 97%;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      color: #9D1E20;
+      font-size: 30px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      word-wrap: break-word;
+    }
+
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 22.40px;
+      color: #1E1E1E;
+      display: block;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 16px;
+      color: #1E1E1E;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-group div {
+      width: 48%;
+    }
+
+    .address {
+      width: 100%;
+    }
+  
+  .declaration1 {
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .declaration input[type="checkbox"] {
+    margin-right: 5px;
+  }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 16px;
+      color: #F5F5F5;
+      background-color: #9D1E20;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .declaration {
+                display: flex;
+                
+               
+                            }
+            
+    .declaration input[type="checkbox"] {
+                margin-left:200px; /* Adjust the margin as needed */
+              }
+    .declaration label {
+      white-space: nowrap; /* Prevent the label text from wrapping */
+    }
+              
+    .btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .profile-image {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ccc;
+    }
+
+   
+    @media (max-width: 768px) {
+      .form-group div {
+        width: 100%;
+
+        margin-bottom: 10px;
+      }
+    }
+
+    .for-women-only {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="mainContainer">
+    <!-- Header Section -->
+    <div class="header">
+      <h1>KOLLAM DISTRICT BLOOD BANK</h1>
+      <div class="profile-icon">
+        +91 8229767503, +91 8742789
+      </div>
+      <div class="rectangle"></div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+      <h2>Update Profile</h2>
+      <img src="default-profile.png" alt="Profile Image" id="profileImage" class="profile-image">
+      <form id="updateProfileForm">
+        <div class="form-group">
+          <div>
+            <label>Name</label>
+            <input type="text" value="John Doe" >
+          </div>
+          <div>
+            <label>Date of Birth</label>
+            <input type="date" value="1990-01-01" >
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>Gender</label>
+            <input type="text" value="female"  id="gender">
+          </div>
+          <div>
+            <label>Blood Group</label>
+            <input type="text" value="O+" >
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>State</label>
+            <input type="text" value="Kerala" >
+          </div>
+          <div>
+            <label>Phone Number</label>
+            <input type="text" value="9876543210" >
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>District</label>
+            <input type="text" value="Kollam" >
+          </div>
+          <div>
+            <label>Email ID</label>
+            <input type="email" value="john.doe@example.com" >
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>Pincode</label>
+            <input type="text" value="691001" >
+          </div>
+          <div>
+            <label>Aadhaar Number</label>
+            <input type="text" value="123456789012" >
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="address">
+            <label>Address</label>
+            <textarea rows="3" >123, Main Street, Kollam</textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>1. If for any patients, enter name of patient</label>
+            <input type="text" placeholder="Enter name of patient">
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>2. Have you ever donated blood or blood components? If so, when?</label>
+            <input type="text" placeholder="Enter details">
+          </div>
+          <div>
+            <label>3. Have you donated blood at this blood bank? If so, when?</label>
+            <input type="text" placeholder="Enter details">
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>4. Have you taken any medicine in the past week or today? If so, what medicine?</label>
+            <input type="text" placeholder="Enter details">
+          </div>
+          <div>
+            <label>5. Have you experienced unexplained weight loss?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>6. Have you had any serious accidents?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>7. Have you had any minor or major surgeries?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>8. Do you have tuberculosis or a chronic cough?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>9. Do you have high blood pressure?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>10. Do you have any heart diseases?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>11. Do you have any type of cancer or polycythemia?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>12. Do you have abnormal bleeding, blood-related diseases, or hemorrhoids?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>13. Have you had a stroke, epilepsy, or mental illness?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>14. Have you had a fever, cold, or sore throat in the past week?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>15. Have you had jaundice, hepatitis, or other liver diseases (for yourself or a close relative)?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>16. Do you have any skin diseases?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>17. Have you had any sexually transmitted diseases?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>18. Have you had malaria?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>19. Have you ever been banned from donating blood as a blood donor?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>20. Have you had a viral fever?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>21. Have you had a tattoo or ear piercing?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>22. Have you had any vaccinations in the last 15 days?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>23. Have you had any kidney disease?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>24. Have you had a rabies vaccination in the past year?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>25. Have you ever been tested for HIV/AIDS?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>26. Have you had dental treatment in the past week?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>27. Have you ever used a needle or syringe to inject drugs or shared it with someone else?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>28. Have you had sex outside of marriage?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>29. Have you drunk alcohol today or yesterday?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>30. Did you sleep well yesterday?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>31. Are you interested in becoming a volunteer blood donor at a blood bank?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>32. Would you like to know the results of the blood test?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group for-women-only">
+          <div>
+            <label>1. Are you pregnant or experiencing bleeding?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>2. Have you had an abortion? If so, when?</label>
+            <input type="text" placeholder="Enter details">
+          </div>
+        </div>
+        <div class="form-group for-women-only">
+          <div>
+            <label>3. Do you have a child under one year of age?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>Height (cm)</label>
+            <input type="number" placeholder="Enter height">
+          </div>
+          <div>
+            <label>Weight (kg)</label>
+            <input type="number" placeholder="Enter weight">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="address">
+            <label>Donor's Declaration</label>
+            <textarea rows="8" >
+I am a person who has completed 18 years of age. I agree to donate one unit of blood, to have my blood tested for blood-borne diseases such as HIV, Hepatitis B, Hepatitis C, Malaria, Syphilis, and to allow the blood bank to process my blood and blood components in a way that will benefit patients and use them for a larger patient population (in and outside this hospital). I understand that the above information is completely truthful and that all these questions are for my own safety and the safety of the patients who receive my blood.
+            </textarea>
+            <div class="declaration">
+              <input type="checkbox" id="declaration" name="declaration" checkbox readonly >
+              <label for="declaration">I agree to the above declaration</label>
+            </div>
+            
+          </div>
+        </div>
+        <div class="form-group" style="display: flex; justify-content: space-between;">
+          <button type="submit" class="btn">Submit To Doctor</button>
+          <button type="button" class="btn" style="background-color: #b71c1c;">Reject</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+  

@@ -164,9 +164,8 @@
       border-radius: 5px;
       cursor: pointer;
       margin-top: 05px;
-    margin-left: 5px;
+      margin-left: 5px;
       margin-bottom: 10px;
-      ;
       font-weight: bold;
     }
 
@@ -190,6 +189,36 @@
     }
 
     .register-link a:hover {
+      text-decoration: underline;
+    }
+
+    .timer {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 22.40px;
+      color: #9D1E20;
+    }
+
+    .resend-link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 22.40px;
+      display: none;
+    }
+
+    .resend-link a {
+      color: #1B006A;
+      text-decoration: underline;
+      font-weight: 400;
+    }
+
+    .resend-link a:hover {
       text-decoration: underline;
     }
   </style>
@@ -220,7 +249,7 @@
             <label for="mobile">MOBILE NUMBER</label>
             <input type="text" id="mobile" placeholder="Value">
           </div>
-          <button class="btn">Send OTP</button>
+          <button class="btn" id="sendOtpBtn">Send OTP</button>
           <div class="form-group">
             <label for="otp">ENTER OTP</label>
             <input type="text" id="otp" placeholder="Value">
@@ -229,9 +258,53 @@
           <div class="register-link">
             New User? <a href="C:\Desktop\miniproject\new donor registration\registrationdonor.html">Register now</a>
           </div>
+          <div class="timer" id="timer">Resend OTP in 30 seconds</div>
+          <div class="resend-link" id="resendLink">
+            <a href="#" id="resendOtpLink">Resend OTP</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    document.getElementById('sendOtpBtn').addEventListener('click', function() {
+      var timerElement = document.getElementById('timer');
+      var resendLinkElement = document.getElementById('resendLink');
+      var resendOtpLink = document.getElementById('resendOtpLink');
+      var timeLeft = 30;
+
+      timerElement.style.display = 'block';
+      resendLinkElement.style.display = 'none';
+
+      var timerInterval = setInterval(function() {
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          timerElement.style.display = 'none';
+          resendLinkElement.style.display = 'block';
+        } else {
+          timerElement.textContent = 'Resend OTP in ' + timeLeft + ' seconds';
+        }
+        timeLeft -= 1;
+      }, 1000);
+
+      resendOtpLink.addEventListener('click', function() {
+        // Logic to resend OTP
+        timeLeft = 30;
+        timerElement.style.display = 'block';
+        resendLinkElement.style.display = 'none';
+        timerInterval = setInterval(function() {
+          if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerElement.style.display = 'none';
+            resendLinkElement.style.display = 'block';
+          } else {
+            timerElement.textContent = 'Resend OTP in ' + timeLeft + ' seconds';
+          }
+          timeLeft -= 1;
+        }, 1000);
+      });
+    });
+  </script>
 </body>
 </html>

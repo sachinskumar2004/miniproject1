@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kollam District Blood Bank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #fdfdfd;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+      padding: 20px;
+      position: relative;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+      color: #9D1E20;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      word-wrap: break-word;
+    }
+
+    .rectangle {
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+      box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.25);
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+
+    .profile-icon {
+      color: #3f3f3f;
+    }
+
+    /* Form Styling */
+    .form-container {
+      width: 97%;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      color: #9D1E20;
+      font-size: 30px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      word-wrap: break-word;
+    }
+
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 22.40px;
+      color: #1E1E1E;
+      display: block;
+    }
+
+    .form-group input[readonly],
+    .form-group textarea[readonly] {
+      background-color: #e9ecef;
+      color: #6c757d;
+      pointer-events: none;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 16px;
+      color: #1E1E1E;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-group div {
+      width: 48%;
+    }
+
+    .address {
+      width: 100%;
+    }
+
+    .btn {
+      width: 48%;
+      padding: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 16px;
+      color: #F5F5F5;
+      background-color: #9D1E20;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .profile-image {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .form-group div {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="mainContainer">
+    <!-- Header Section -->
+    <div class="header">
+      <h1>KOLLAM DISTRICT BLOOD BANK</h1>
+      <div class="profile-icon">
+        +91 8229767503, +91 8742789
+      </div>
+      <div class="rectangle"></div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+      <h2>Donor Profile</h2>
+      <img src="JOB06818.JPG" alt="Profile Image" id="profileImage" class="profile-image">
+      <form id="updateProfileForm">
+        <div class="form-group">
+          <div>
+            <label>Name</label>
+            <input type="text" value="John Doe" readonly>
+          </div>
+          <div>
+            <label>Date of Birth</label>
+            <input type="date" value="1990-01-01" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>Gender</label>
+            <input type="text" value="female" readonly>
+          </div>
+          <div>
+            <label>Blood Group</label>
+            <input type="text" value="O+" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>State</label>
+            <input type="text" value="Kerala" readonly>
+          </div>
+          <div>
+            <label>Phone Number</label>
+            <input type="text" value="9876543210" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>District</label>
+            <input type="text" value="Kollam" readonly>
+          </div>
+          <div>
+            <label>Email ID</label>
+            <input type="email" value="john.doe@example.com" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>Pincode</label>
+            <input type="text" value="691001" readonly>
+          </div>
+          <div>
+            <label>Aadhaar Number</label>
+            <input type="text" value="123456789012" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="address">
+            <label>Address</label>
+            <textarea rows="3" readonly>123, Main Street, Kollam</textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>Height (cm)</label>
+            <input type="number" value="170" readonly>
+          </div>
+          <div>
+            <label>Weight (kg)</label>
+            <input type="number" value="65" readonly>
+          </div>
+        </div>
+        <div class="form-group" style="display: flex; justify-content: space-between;">
+          <button type="submit" class="btn">Mark as completed </button>
+          <button type="button" class="btn" style="background-color: #b71c1c;">Send Certificate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
