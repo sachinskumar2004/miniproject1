@@ -135,7 +135,12 @@
       margin-top: 10px;
     }
 
-    .btn:hover {
+    .btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .btn:hover:not(:disabled) {
       background-color: #b71c1c;
     }
 
@@ -244,11 +249,38 @@
           </div>
         </div>
         <div class="form-group" style="display: flex; justify-content: space-between;">
-          <button type="submit" class="btn">Mark as completed </button>
-          <button type="button" class="btn" style="background-color: #b71c1c;">Send Certificate</button>
+          <button type="button" class="btn" id="markCompleteBtn">Mark as Completed</button>
+          <button type="button" class="btn" id="sendCertificateBtn" disabled>Send Certificate</button>
         </div>
+     
       </form>
     </div>
   </div>
+
+  <script>
+    const markCompleteBtn = document.getElementById('markCompleteBtn');
+    const sendCertificateBtn = document.getElementById('sendCertificateBtn');
+
+    markCompleteBtn.addEventListener('click', () => {
+      sendCertificateBtn.disabled = false;
+      alert('Marked as completed. You can now send the certificate.');
+    });
+    sendCertificateBtn.addEventListener('click', () => {
+  const donorName = document.querySelector('input[value="John Doe"]').value;
+  const donorEmail = document.querySelector('input[value="john.doe@example.com"]').value;
+
+  // Open Gmail with the donor's email pre-filled
+  const subject = encodeURIComponent('Certificate of Appreciation');
+  const body = encodeURIComponent(`Dear ${donorName},\n\nThank you for your donation! Please find your certificate attached.\n\nBest regards,\nKollam District Blood Bank`);
+  const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${donorEmail}&su=${subject}&body=${body}`;
+
+  // Open the Gmail compose window in a new tab
+  window.open(mailtoLink, '_blank');
+});
+
+      alert(`Certificate will be sent to ${donorName} at ${donorEmail}.`);
+      // Add logic to call the backend API to generate and send the certificate
+  
+  </script>
 </body>
 </html>
